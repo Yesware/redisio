@@ -167,6 +167,7 @@ def configure
         owner current['user']
         group current['group']
         mode '0644'
+        action :create_if_missing
         variables({
           :version                    => version_hash,
           :piddir                     => piddir,

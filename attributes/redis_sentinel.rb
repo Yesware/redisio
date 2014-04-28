@@ -24,8 +24,11 @@ default['redisio']['sentinel_defaults'] = {
   'down-after-milliseconds' => 30000,
   'can-failover'            => 'yes',
   'parallel-syncs'          => 1,
-  'failover-timeout'        => 900000
+  'failover-timeout'        => 900000,
+  'loglevel'                => 'notice',
+  'logfile'                 => nil,
+  'syslogenabled'           => 'yes',
+  'syslogfacility'          => 'local0'
 }
 
 default['redisio']['sentinels'] = []
-
