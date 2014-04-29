@@ -88,6 +88,7 @@ def configure
         owner current['user']
         group current['group']
         mode '0644'
+        action :create_if_missing
         variables({
           :piddir                 => piddir,
           :name                   => sentinel_name,
@@ -99,7 +100,11 @@ def configure
           :downaftermil           => current['down-after-milliseconds'],
           :canfailover            => current['can-failover'],
           :parallelsyncs          => current['parallel-syncs'],
-          :failovertimeout        => current['failover-timeout']
+          :failovertimeout        => current['failover-timeout'],
+          :loglevel               => current['loglevel'],
+          :logfile                => current['logfile'],
+          :syslogenabled          => current['syslogenabled'],
+          :syslogfacility         => current['syslogfacility']
         })
       end
       #Setup init.d file
